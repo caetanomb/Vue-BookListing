@@ -37,7 +37,7 @@ h1, h2 {
 
 ul {
     list-style-type: none;
-    padding: 0px
+    padding: 0
 }
 
 li {
