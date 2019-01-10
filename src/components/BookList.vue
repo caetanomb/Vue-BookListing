@@ -2,7 +2,7 @@
     <div>
         <h1>{{ title }}</h1>
         <ul>
-            <book-item v-for="book in books" :key="book.title" :book="book" @deleteBook='spliceBook'></book-item>            
+            <book-item v-for="book in books" :key="book.title" :book="book"></book-item>            
         </ul>
         <book-form @addBook='appendBook'></book-form>
     </div>    
@@ -39,14 +39,6 @@ export default {
     methods: {
         appendBook(bookTitle, bookAuthor) {
             this.books.push({title: bookTitle, author: bookAuthor})
-        },
-        spliceBook(bookTitle){            
-            const foundItens = this.books.filter(a => a.title == bookTitle);
-
-            for(var i = 0; i < foundItens.length; i++){                
-                const index = this.books.indexOf(foundItens[i])
-                this.books.splice(index, 1);
-            }            
         }
     }
 }
