@@ -10,7 +10,6 @@
 <script>
 import BookItem from './BookItem';
 import BookForm from './BookForm';
-import { defaultCoreCipherList } from 'constants';
 
 export default {
     name: 'BookList',
@@ -43,7 +42,7 @@ export default {
         },
         spliceBook(bookTitle){            
             const foundItens = this.books.filter(a => a.title == bookTitle);
-                                    
+
             for(var i = 0; i < foundItens.length; i++){                
                 const index = this.books.indexOf(foundItens[i])
                 this.books.splice(index, 1);
